@@ -13,5 +13,4 @@ public class EctocystApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EctocystApplication.class, args);
 	}
-
 }
