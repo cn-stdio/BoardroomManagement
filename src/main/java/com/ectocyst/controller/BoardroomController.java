@@ -1,7 +1,7 @@
 package com.ectocyst.controller;
 
 import com.ectocyst.service.BoardroomService;
-import org.json.JSONObject;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +22,8 @@ public class BoardroomController {
     public JSONObject getBoardroom() {
 
         JSONObject returnBoardroom = new JSONObject();
+
+        returnBoardroom = boardroomService.queryAllBoardroom();
 
         return returnBoardroom;
     }

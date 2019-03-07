@@ -1,6 +1,6 @@
 package com.ectocyst.service;
 
-import org.json.JSONObject;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 /**

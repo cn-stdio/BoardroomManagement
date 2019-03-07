@@ -1,8 +1,7 @@
 package com.ectocyst.mapper;
 
 import com.ectocyst.model.Boardroom;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

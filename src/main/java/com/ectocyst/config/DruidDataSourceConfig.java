@@ -29,7 +29,7 @@ import java.util.Map;
 @Configuration
 @ConditionalOnClass(DruidDataSource.class)
 @ConditionalOnProperty(name = "spring.dataSource.type", havingValue = "com.alibaba.druid.pool.DruidDataSource", matchIfMissing = true)
-@ServletComponentScan("com.seagull.myblog.filters")
+@ServletComponentScan("com.ectocyst.filters")
 public class DruidDataSourceConfig {
 
     private Logger logger = LoggerFactory.getLogger(DruidDataSourceConfig.class);

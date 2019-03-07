@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author Seagull_gby
  * @date 2019/2/27 16:06
@@ -18,7 +20,7 @@ public class Boardroom {
     /**
      * 会议室ID
      */
-    private int boardroomId;
+    private long boardroomId;
 
     /**
      * 会议室名字

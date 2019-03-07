@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author Seagull_gby
  * @date 2019/2/27 18:52
@@ -18,7 +20,7 @@ public class BoardroomReservation {
     /**
      * 会议室ID
      */
-    private int boardroomId;
+    private long boardroomId;
 
     /**
      * 会议日期
@@ -26,12 +28,17 @@ public class BoardroomReservation {
     private String date;
 
     /**
-     * 会议时间段
+     * 会议预约起始时间
      */
-    private String time;
+    private Date startTime;
+
+    /**
+     * 会议预约终止时间
+     */
+    private Date endTime;
 
     /**
      * 预约者工号
      */
-    private int reservation_id;
+    private long reservationId;
 }

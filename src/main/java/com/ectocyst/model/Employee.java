@@ -13,12 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class employee {
+public class Employee {
 
     /**
      * 工号
      */
-    private int jobId;
+    private long jobId;
 
     /**
      * 姓名
@@ -26,7 +26,7 @@ public class employee {
     private String name;
 
     /**
-     * 性别
+     * 性别（男1女2）
      */
     private int sex;
 
@@ -36,17 +36,18 @@ public class employee {
     private String position;
 
     /**
+     * 所属部门
+     */
+    private String department;
+
+    /**
      * 密码
      */
     private String password;
 
     /**
-     * 预约的会议室编号
+     * 人脸识别图片链接
      */
-    private String bookingConference;
+    private String imgUrl;
 
-    /**
-     * 参与的会议室编号
-     */
-    private String partakeConference;
 }
