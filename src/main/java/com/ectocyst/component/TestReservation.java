@@ -1,10 +1,11 @@
 package com.ectocyst.component;
 
 import com.ectocyst.mapper.ReservationMapper;
-import com.ectocyst.model.BoardroomReservation;
+import com.ectocyst.utils.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,27 +30,14 @@ public class TestReservation {
      */
     public String testReservationByBoardroomIdAndDate(long boardroomId, String date) {
 
-        String reservation = null;
+        String reservation = "NO";
         List<Date> startTimes = new ArrayList<>();
         List<Date> endTimes = new ArrayList<>();
         Date startTime = new Date();
         Date endTime = new Date();
         Date currentTime = new Date();
 
-        List<BoardroomReservation> boardroomReservations = new ArrayList<>();
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println(boardroomId + "  " + date);
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-        boardroomReservations = reservationMapper.queryReservationById(1);
-
-        System.out.println(boardroomReservations);
-
+        startTimes = reservationMapper.queryReservationStartTimeByBoardroomIdAndDate(boardroomId, date);
         endTimes = reservationMapper.queryReservationEndTimeByBoardroomIdAndDate(boardroomId, date);
 
         for(int i=0; i<startTimes.size(); i++) {
@@ -65,5 +53,27 @@ public class TestReservation {
         }
 
         return reservation;
+    }
+
+    /**
+     * 根据会议室编号获得当前时间的所有预约时间段
+     * @param boardroomId 会议室编号
+     * @return 某会议室预约起始时间集合
+     */
+    public List<Date> getReservationTimeOfCurrentDateByBoardroomId(long boardroomId) {
+
+        TimeUtil timeUtil = new TimeUtil();
+        String currentDate = null;
+
+        try {
+            currentDate = timeUtil.getFormatDateOfmd(new Date());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        List<Date> startTimes = new ArrayList<>();
+        startTimes = reservationMapper.queryReservationStartTimeByBoardroomIdAndDate(boardroomId, currentDate);
+
+        return startTimes;
     }
 }

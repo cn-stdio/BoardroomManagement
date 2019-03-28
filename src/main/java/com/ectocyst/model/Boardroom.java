@@ -33,7 +33,39 @@ public class Boardroom {
     private String boardroomImg;
 
     /**
-     * 未来7天的预约情况
+     * 会议室容量
      */
-    private String condition;
+    private String capacity;
+
+    public long getBoardroomId() {
+        return boardroomId;
+    }
+
+    public void setBoardroomId(long boardroomId) {
+        this.boardroomId = boardroomId;
+    }
+
+    public String getBoardroomName() {
+        return boardroomName;
+    }
+
+    public void setBoardroomName(String boardroomName) {
+        this.boardroomName = boardroomName;
+    }
+
+    public String getBoardroomImg() {
+        return boardroomImg;
+    }
+
+    public void setBoardroomImg(String boardroomImg) {
+        this.boardroomImg = boardroomImg;
+    }
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
 }

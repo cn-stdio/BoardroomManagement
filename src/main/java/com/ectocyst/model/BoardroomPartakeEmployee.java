@@ -3,6 +3,7 @@ package com.ectocyst.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -31,4 +32,28 @@ public class BoardroomPartakeEmployee {
      * 参与会议起始时间
      */
     private Date partakeTime;
+
+    public long getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(long jobId) {
+        this.jobId = jobId;
+    }
+
+    public int getPartakeConference() {
+        return partakeConference;
+    }
+
+    public void setPartakeConference(int partakeConference) {
+        this.partakeConference = partakeConference;
+    }
+
+    public Date getPartakeTime() {
+        return partakeTime;
+    }
+
+    public void setPartakeTime(Date partakeTime) {
+        this.partakeTime = partakeTime;
+    }
 }

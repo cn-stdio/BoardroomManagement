@@ -27,8 +27,8 @@ public class FaceDetectionUtil {
      * @return 精准度
      */
     public float faceEngine(File f1, File f2) {
-        String appId = "HRhHKsgqJVFGoZUAoniFJPdZoNN1Na4UPPfPWvmT5NjQ";
-        String sdkKey = "Fh3dNarSgkdY9EQ1QLEBQgWiLQLPrrF6vfCvDp77hxwn";
+        String appId = "*********************";
+        String sdkKey = "*************************";
 
         ImageInfoUtil imageInfoUtil = getRGBData(f1);
         ImageInfoUtil imageInfoUtil2 = getRGBData(f2);
@@ -79,8 +79,9 @@ public class FaceDetectionUtil {
      * @return
      */
     public ImageInfoUtil getRGBData(File file) {
-        if (file == null)
+        if (file == null){
             return null;
+        }
         ImageInfoUtil imageInfoUtil;
         try {
             //将图片文件加载到内存缓冲区
